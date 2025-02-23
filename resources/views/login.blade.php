@@ -20,4 +20,6 @@
             </div>
             <button type="submit">Login</button>
         </form>
-        <p><a href="">Don't have an account? Create new one </a></p>
+        <p><a href=" {{route('user.register')}} ">Don't have an account? Create new one </a></p>
+    </div>
+</body>

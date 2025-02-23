@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 class UserController extends Controller
 {
@@ -10,8 +11,11 @@ class UserController extends Controller
         return view('login');
     }
 
-    public function create() {
-        return 'create action';
+    public function register() {
+        return view('register');
     }
 
+    public function store() {
+        return 'store action';
+    }
 }
