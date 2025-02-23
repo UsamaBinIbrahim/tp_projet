@@ -1,0 +1,1 @@
+This is bashboard view of user {{$user_id}}

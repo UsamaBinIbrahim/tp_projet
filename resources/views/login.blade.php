@@ -8,11 +8,11 @@
 <body>
     <div>
         <h2>Login</h2>
-        <form action="" method="POST">
+        <form action="{{route('login')}}" method="POST">
             @csrf
             <div>
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username" required>
+                <label for="username">Email</label>
+                <input type="email" name="email" id="email" required>
             </div>
             <div>
                 <label for="password">Password</label>
@@ -20,6 +20,11 @@
             </div>
             <button type="submit">Login</button>
         </form>
-        <p><a href=" {{route('user.register')}} ">Don't have an account? Create new one </a></p>
+        <p><a href="{{route('register')}}">Don't have an account? Create one now</a></p>
     </div>
+    @session('login')
+    <div style="background-color: lightcoral; margin: 10px; padding:5px; color:rgb(88, 5, 5)">
+        {{session('login')}}
+    </div>
+    @endsession
 </body>
