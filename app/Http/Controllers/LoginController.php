@@ -31,9 +31,11 @@ class LoginController extends Controller
         // checking if such record exists in the User table
         // if exists, authenticated object (here User Model) gets stored in session
         if(FacadesAuth::attempt($credentials)) {
-            return to_route('user.dashboard', FacadesAuth::id());
+            return to_route('posts.dashboard', FacadesAuth::id());
         }
-        return back()->with('login', 'Incorrect email or password.');
+        return back()
+            ->withInput()
+            ->withErrors(['login' => 'Incorrect email or password.']);
     }
 
     public function register() {
