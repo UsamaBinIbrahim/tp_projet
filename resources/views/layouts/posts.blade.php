@@ -14,10 +14,10 @@
             <li><a href="{{route('dashboard', $user_id)}}">Dashboard</a></li>
             <li><a href="">Profile</a></li>
             <li><a href="">Settings</a></li>
-            <li><a href="">Logout</a></li>
+            <li><a href="{{route('logout')}}">Logout</a></li>
         </ul>
     </nav>
     @yield('content')
-    <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap/bootstrap.bundle.min.js')}}"></script>
 </body>
 </html>

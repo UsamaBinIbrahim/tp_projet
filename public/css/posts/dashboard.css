@@ -18,6 +18,9 @@
     text-decoration: none;
     color: white;
 }
+body {
+    background-color: #445662;
+}
 .posts-container {
     background-color: #445662;
     display: flex;

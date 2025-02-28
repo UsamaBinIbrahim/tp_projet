@@ -62,7 +62,11 @@ class LoginController extends Controller
         ]);
 
         // redirect to user login route
-        return to_route('dashboard', $user->id);
-        
+        return to_route('dashboard', $user->id);   
+    }
+
+    public function logout() {
+        FacadesAuth::logout();
+        return to_route('index');
     }
 }
