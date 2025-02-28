@@ -31,7 +31,7 @@ class LoginController extends Controller
         // checking if such record exists in the User table
         // if exists, authenticated object (here User Model) gets stored in session
         if(FacadesAuth::attempt($credentials)) {
-            return to_route('posts.dashboard', FacadesAuth::id());
+            return to_route('dashboard', FacadesAuth::id());
         }
         return back()
             ->withInput()
@@ -62,7 +62,7 @@ class LoginController extends Controller
         ]);
 
         // redirect to user login route
-        return to_route('user.dashboard', $user->id);
+        return to_route('dashboard', $user->id);
         
     }
 }

@@ -15,5 +15,6 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/register', [LoginController::class, 'register'])->name('register');
 Route::post('/register', [LoginController::class, 'store'])->name('register.store');
 
-Route::get('/dashboard/{user}', [PostController::class, 'dashboard'])->name('posts.dashboard');
-Route::get('/posts/{user}/create', [PostController::class, 'create'])->name('posts.create');
+Route::get('/users/{user}/dashboard', [PostController::class, 'dashboard'])->name('dashboard');
+Route::get('/users/{user}/posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::post('users/{user}/posts/store', [PostController::class, 'store'])->name('posts.store');
