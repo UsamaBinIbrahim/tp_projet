@@ -16,7 +16,11 @@
                     {{$post['description']}}
                 </div>
                 <div class="post-image">
-                    <img src="{{asset('img/'. $post['image'])}}" alt="Post Image">
+                    {{-- if image exists in the public/img directory,
+                    display the img element with the image url --}}
+                    @if (!empty($post['image']) && file_exists(public_path('img/'. $post['image'])))
+                        <img src="{{asset('img/'. $post['image'])}}" alt="Post Image">
+                    @endif
                 </div>
             </div>
         @endforeach
