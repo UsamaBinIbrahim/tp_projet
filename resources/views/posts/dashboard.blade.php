@@ -1,9 +1,9 @@
 @extends('layouts.posts')
 
 @section('title') Dashboard @endsection
-@section('style')
-    <link rel="stylesheet" href="{{asset('css/posts/dashboard.css')}}">
-@endsection
+<style>
+    
+</style>
 @section('content')
     <div class="posts-container">
         @foreach ($posts as $post)
