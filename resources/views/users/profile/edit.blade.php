@@ -2,7 +2,7 @@
 
 @section('title') Profile @endsection
 @section('content')
-    <div class="post-form mt-5">
+    <div class="post-form mt-5" style="margin-top:10vh">
         <h2>{{$user->first_name . ' ' . $user->last_name}}</h2>
         <form action="{{route('users.profile.update', $user->id)}}" method="POST" enctype="multipart/form-data">
             @csrf

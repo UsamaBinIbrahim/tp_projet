@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Redis;
 class LoginController extends Controller
 {
     public function index() {
-        return view('login');
+        return view('auth.login');
     }
 
     public function login(Request $request) {
@@ -39,7 +39,7 @@ class LoginController extends Controller
     }
 
     public function register() {
-        return view('register');
+        return view('auth.register');
     }
 
     public function store(Request $request) {

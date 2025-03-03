@@ -123,7 +123,7 @@
 
         <ul class="nav-links">
             <li class="dashboard"><a href="{{route('dashboard', $user_id)}}">Dashboard</a></li>
-            <li class="dashboard"><a href="{{route('users.profile', $user_id)}}">Profile</a></li>
+            <li class="dashboard"><a href="{{route('users.profile.show', $user_id)}}">Profile</a></li>
             <li class="dashboard"><a href="{{route('logout')}}">Logout</a></li>
         </ul>
     </nav>

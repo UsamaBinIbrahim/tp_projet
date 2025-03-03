@@ -20,4 +20,8 @@ Route::middleware('auth')->group(function() {
     Route::get('/users/{user}/dashboard', [PostController::class, 'dashboard'])->name('dashboard');
     Route::get('/users/{user}/posts/create', [PostController::class, 'create'])->name('posts.create');
     Route::post('users/{user}/posts/store', [PostController::class, 'store'])->name('posts.store');
+
+    Route::get('users/{user}/profile/show', [UserController::class, 'show'])->name('users.profile.show');
+    Route::get('users/{user}/profile/edit', [UserController::class, 'edit'])->name('users.profile.edit');
+    Route::post('user/{user}/profile/update', [UserController::class, 'update'])->name('users.profile.update');
 });
