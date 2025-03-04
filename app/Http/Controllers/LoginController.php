@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Redis;
 class LoginController extends Controller
 {
     public function index() {
+        if(FacadesAuth::check()) {
+            $user = FacadesAuth::user();
+            return to_route('dashboard', $user->id);
+        }
         return view('auth.login');
     }
 
@@ -30,7 +34,7 @@ class LoginController extends Controller
 
         // checking if such record exists in the User table
         // if exists, authenticated object (here User Model) gets stored in session
-        if(FacadesAuth::attempt($credentials)) {
+        if(FacadesAuth::attempt($credentials, true)) {
             return to_route('dashboard', FacadesAuth::id());
         }
         return back()
@@ -61,6 +65,7 @@ class LoginController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
+        FacadesAuth::login($user, true);
         // redirect to user login route
         return to_route('dashboard', $user->id);   
     }

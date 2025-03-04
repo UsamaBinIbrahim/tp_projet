@@ -77,17 +77,24 @@ class PostController extends Controller
 
     public function store(User $user, Request $request) {
         $request->validate([
-            'description' => 'required|max:255',
+            'description' => 'required_without_all:image|max:255',
+            'image' => 'required_without_all:description|image',
         ]);
+
+        $file_name = null;
+        if($request->hasFile('image')) {
+            $file = $request->image;
+            $file_name = date('Y-m-d_H-i-s') . '-' . $user->id . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('img'), $file_name);
+        }
 
         $data = [
             'description' => $request->description,
-            'image' => $request->image? $request->image: null,
+            'image' => $file_name,
             'user_id' => $user->id,
         ];
-
         Post::create($data);
 
-        return to_route('dashboard', $user->id);
+        return to_route('users.profile.show', $user->id);
     }
 }

@@ -8,7 +8,7 @@
     <form action="{{route('login')}}" method="POST">
         @csrf
         <div>
-            <label for="username">Email</label>
+            <label for="email">Email</label>
             <input type="email" name="email" id="email" value="{{$errors->any()? old('email') : null}}" required>
         </div>
         <div>

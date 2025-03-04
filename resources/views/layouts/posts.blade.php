@@ -139,6 +139,7 @@
     </footer>
 
     <script src="{{asset('js/bootstrap/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('js/jquery/jquery-3.7.1.js')}}"></script>
     <script>
         function toggleMenu() { document.querySelector(".nav-links").classList.toggle("show"); }
     </script>
